@@ -1,20 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shapes
 {
     class Square
     {
-        public double CalculateArea(double length)
+        private double _length;
+        
+        public Square(double Length)
         {
-            return length * length;
+            _length = Length;
         }
-        public double CalculatePerimeter(double length)
+
+        public double Area()
         {
-            return 4 * length;
+            return _length * _length;
+        }
+        
+        public double Perimeter()
+        {
+            return 4 * _length;
+        }
+        public void CompareSquare(Square S)
+        {
+            if (this.Area() == S.Area())
+            {
+                Console.WriteLine("The area of the rectangles are equal");
+            }
+            else
+            {
+                Console.WriteLine("The area of the rectangles are not equal");
+            }
+
+            if (this.Perimeter() == S.Perimeter())
+            {
+                Console.WriteLine("The perimeter of the rectangles are equal");
+            }
+            else
+            {
+                Console.WriteLine("The perimeter of the rectangles are not equal");
+            }
         }
     }
 }

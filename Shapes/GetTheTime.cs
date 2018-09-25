@@ -8,7 +8,7 @@ namespace Shapes
 {
     class GetTheTime
     {
-       void GetTime(string format, String date)
+       void GetTime(string format, string date)
         {
 
             if(format == "seconds")

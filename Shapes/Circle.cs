@@ -1,36 +1,58 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shapes
 {
     class Circle
     {
-        private double PI = 3.14;
-        // private double radius;
+        private double _radius;
+        private double PI = 3.14159;
 
-        public double CalculateRadius(double radius)
+        public Circle(double Radius)
         {
-            return ( PI *(radius * radius));
+            this._radius = Radius;
         }
 
-        public double CalculateCircle(double radius)
+        public double Area()
         {
-            return (2 * PI * radius);
-        } 
-    }
-    class Program
-    {
-        static void Main(string[] args)
+            return PI * _radius * _radius;
+        }
+
+        public double Perimeter()
         {
-            Circle C = new Circle();
-                       
-            string rad = Console.ReadLine();
-            double radius = Convert.ToInt32(rad);
-            Console.WriteLine(C.CalculateRadius(radius));            
-            Console.ReadKey();
-        }  
+            return 2 * PI * _radius;
+        }
+
+        public bool Equals(Circle c)
+        {
+            if(this._radius == c._radius)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        public void CompareCircle(Circle C)
+        {
+            if (this.Area() == C.Area())
+            {
+                Console.WriteLine("The area of the rectangles are equal");
+            }
+            else
+            {
+                Console.WriteLine("The area of the rectangles are not equal");
+            }
+
+            if (this.Perimeter() == C.Perimeter())
+            {
+                Console.WriteLine("The perimeter of the rectangles are equal");
+            }
+            else
+            {
+                Console.WriteLine("The perimeter of the rectangles are not equal");
+            }
+        }
     }
 }
