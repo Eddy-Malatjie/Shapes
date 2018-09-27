@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Circle.cs" />
     <Compile Include="CountInstances.cs" />
+    <Compile Include="ExtendClass.cs" />
     <Compile Include="LogFileReader.cs" />
     <Compile Include="GetTheTime.cs" />
     <Compile Include="MainProgram.cs" />

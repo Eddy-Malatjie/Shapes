@@ -23,7 +23,9 @@ namespace Shapes
             {
                 FileName = "spindle.log." + i;
                 path = @"C:\Users\Reverside\Documents\Visual Studio 2015\Projects\Shapes\Shapes\log\" + FileName;
-
+                Console.WriteLine();
+                Console.WriteLine(FileName);
+                Console.WriteLine("*****************************************************************************");
                 try
                 {
                 ReadAFile(path);
@@ -45,25 +47,24 @@ namespace Shapes
             StreamReader Stream = new StreamReader(Path);
             string Line = Stream.ReadLine();
             DateTime FirstTime = DateTime.Parse(Line.Substring(11, 8));
-            string SecondTime;
-            double duration;
+            DateTime SecondTime;
+            double Duration;
+            int LineNumber = 1;
 
             while ((Line = Stream.ReadLine()) != null)
             {
-                SecondTime = Line.Substring(11, 8);
-                Console.WriteLine(FirstTime);
-                Console.WriteLine("SPACE");
-                Console.WriteLine(SecondTime);
-              //  duration = SecondTime.Subtract(FirstTime).TotalSeconds;
-              //  Console.WriteLine(duration);
+                SecondTime = DateTime.Parse(Line.Substring(11, 8));
+                Duration = (SecondTime - FirstTime).TotalSeconds;
+                LineNumber++;
 
-
+                if(Duration > 5)
+                {
+                    Console.WriteLine("Line No [{0}] - {1} Seconds - {2} ",LineNumber,Duration,Line);
                 }
+                
+                FirstTime = SecondTime;
+            }
                 Console.WriteLine("Done");
-        }
-            
-
-
-        
+        }              
     }
 }

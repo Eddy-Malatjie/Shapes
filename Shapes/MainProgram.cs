@@ -36,9 +36,12 @@ namespace Shapes
             //double RectanglePerimeter = R1.Perimeter();
             //Console.WriteLine("The area of the circle is {0} and the perimeter is equal {1}", RectangleArea, RectanglePerimeter);
 
-            LogFileReader FR = new LogFileReader(1);
-            FR.ReadFiles();
+            // LogFileReader FR = new LogFileReader(7);
+            //  FR.ReadFiles();
 
+            double t = DateTimeHelper.Second("seconds");
+            //string t = DateTime.Now.ToString("ddd hh:mm");
+            Console.WriteLine(t);
             Console.ReadKey();
         }
     }
